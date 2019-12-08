@@ -79,7 +79,7 @@ class SignUp extends React.Component {
 						type="password" 
 						name="password" 
 						value={password} 
-						label="password"
+						label="Password"
 						onChange={this.handleChange}
 						required
 					/>
