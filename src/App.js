@@ -31,9 +31,9 @@ class App extends React.Component {
 						...snapShot.data()
 					});
 				});
-			} else {
-				setCurrentUser(userAuth);
 			}
+			
+			setCurrentUser(userAuth);
 		});
 	}
 	
@@ -68,10 +68,10 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
 	currentUser: selectCurrentUser
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
 	setCurrentUser: user => dispatch(setCurrentUser(user))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
