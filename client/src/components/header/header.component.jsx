@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
@@ -15,7 +16,8 @@ import {
 	LogoContainer, 
 	OptionsContainer, 
 	OptionLink,
-	OptionDiv
+	OptionDiv,
+	Icon
 } from './header.styles';
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
@@ -28,9 +30,15 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
 			<OptionLink to="/shop">CONTACT</OptionLink>
 			{
 				currentUser ? 
-				<OptionDiv onClick={signOutStart}>SIGN OUT</OptionDiv>
+				<OptionDiv onClick={signOutStart}>
+					SIGN OUT
+					<Icon icon={faSignOutAlt} />
+				</OptionDiv>
 				:
-				<OptionLink to="/signin">SIGN IN</OptionLink>
+				<OptionLink to="/signin">
+					SIGN IN
+					<Icon icon={faSignInAlt} />
+				</OptionLink>
 			}
 			<CartIcon />
 		</OptionsContainer>
